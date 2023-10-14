@@ -1,1 +1,1 @@
-yapılacaktır
+yapılacaktır.
