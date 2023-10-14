@@ -9,17 +9,17 @@
     
 </body>
 <script>
-    const apiUrl = "https://northwind.vercel.app/api/orders";
+   
     
     // Fetch API'sini kullanarak verileri çekin
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
+    fetch("https://northwind.vercel.app/api/orders")
+    .then(Response => Response.json())
+    .then(Response => {
         // Verileri işleyin ve "country" alanı "USA" olanları filtreleyin
-        const usaOrders = data.filter((country) => country.shipCountry === "USA");
+        var usaOrders = Response.filter((orders) => orders.shipAddress.country === "USA");
     
         // Filtrelenen siparişlerin sayısını bulun
-        const numberOfUsaOrders = usaOrders.length;
+        var numberOfUsaOrders = usaOrders.length;
     
         // Sonucu ekrana yazdırın
         console.log("USA ülkesindeki sipariş sayısı:", numberOfUsaOrders);
