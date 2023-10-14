@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const apiUrl = "https://northwind.vercel.app/api/orders";
+    
+    // Fetch API'sini kullanarak verileri çekin
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        // Verileri işleyin ve "country" alanı "USA" olanları filtreleyin
+        const usaOrders = data.filter((country) => country.shipCountry === "USA");
+    
+        // Filtrelenen siparişlerin sayısını bulun
+        const numberOfUsaOrders = usaOrders.length;
+    
+        // Sonucu ekrana yazdırın
+        console.log("USA ülkesindeki sipariş sayısı:", numberOfUsaOrders);
+      })
+      .catch((error) => {
+        console.error("Veriler alınamadı veya işlenemedi:", error);
+      });</script>
+</html>

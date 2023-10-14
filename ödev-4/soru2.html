@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soru 2</title>
+</head>
+<body>
+    
+</body>
+<script>
+        fetch('https://northwind.vercel.app/api/suppliers')
+            .then(Response => Response.json())
+            .then(Response => {
+                // country ismi Japan olanları filtrelemek için
+                var suppliers = Response.filter(suplier => suplier.address.country === "Japan");
+                // Console'a yazdırmak için
+                console.log(suppliers.length + "country is Japan", suppliers);
+            });
+</script>
+</html>

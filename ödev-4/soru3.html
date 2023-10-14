@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soru 3</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    fetch('https://northwind.vercel.app/api/suppliers')
+        .then(responsive => responsive.json())
+        .then(responsive => {
+            var ul = document.createElement("ul");
+            responsive.forEach(element => {
+                var li = document.createElement("li");
+                // li içerisine companyName yaz
+                li.innerText = element.companyName;
+                ul.appendChild(li);
+                document.body.appendChild(ul);
+            });
+
+        });
+
+</script>
+
+</html>

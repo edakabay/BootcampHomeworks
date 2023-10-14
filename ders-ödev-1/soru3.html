@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+const apiUrl = "https://northwind.vercel.app/api/orders";
+
+
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+   
+    const ordersIn1996 = data.filter((order) => {
+      const orderDate = new Date(order.orderDate);
+      return orderDate.getFullYear() === 1996;
+    });
+
+   
+    console.log("1996 yılındaki siparişler:", ordersIn1996);
+  })
+  .catch((error) => {
+    console.error("Veriler alınamadı veya işlenemedi:", error);
+  });
+
+</script>
+</html>
