@@ -1,0 +1,1 @@
+React hangi listenin değiştiğini, eklendiğini ya da silindiğini takip ederken, html öğelerinin key proplarını kullanır.yani listelere key atadığımız zaman bu sorun ortadan kalkacaktır.
