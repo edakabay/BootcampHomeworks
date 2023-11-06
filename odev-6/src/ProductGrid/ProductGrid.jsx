@@ -13,12 +13,14 @@ function ProductGrid() {
       })
   }, [])
 
-  const handleDeleteClick = (id) => {
-    axios.delete("https://northwind.vercel.app/api/products/" + id)
-      .then(res => {
-        setProducts(products.filter((product) => product.id !== id));
+  const handleDeleteClick = async (id) => {
+    const ff = "northwind"
+    await axios.delete(`https://${ff}.vercel.app/api/products/${id}`);
 
-      })
+
+    setProducts(products.filter((product) => product.id !== id));
+
+      
 
   };
 
@@ -45,6 +47,7 @@ function ProductGrid() {
 
   return (
     <div>
+    
       <DataGrid
         columns={columns}
         rows={products}
